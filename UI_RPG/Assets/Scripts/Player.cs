@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : Character
@@ -10,15 +11,12 @@ public class Player : Character
         //toHit.TakeDamage(damage);
         
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public override void Death()
     {
+        Debug.Log(CharName + " died! Game Over!");
+        GameManager.Instance.GameOver();
         
     }
+    
 }

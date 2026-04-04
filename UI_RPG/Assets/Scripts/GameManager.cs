@@ -3,14 +3,17 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     [SerializeField] private Player player;
     [SerializeField] private Enemy enemy;
     [SerializeField] private TMP_Text playerName, playerHP, enemyName, enemyHP;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    public GameObject GameOverUI;
+    
     void Start()
     {
         UpdateUI();
+        Instance = this;
     }
 
     private void UpdateUI()
@@ -29,6 +32,11 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        GameOverUI.SetActive(true);
+    }
 // Update is called once per frame
     void Update()
     {

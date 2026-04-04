@@ -17,6 +17,11 @@ public abstract class Character : MonoBehaviour
     {
         health = health - damage;
         Debug.Log(charName + " took " + damage + " damage! Health: " + health);
+        if (health <= 0)
+        {
+            health = Mathf.Max(health, 0);
+            Death();
+        }
     }
 
     public void TakeDamage(Weapon thrownWeapon)
@@ -24,6 +29,9 @@ public abstract class Character : MonoBehaviour
         float damage = thrownWeapon.GetDamage();
         TakeDamage(damage);
     }
+
+    public abstract void Death();
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
