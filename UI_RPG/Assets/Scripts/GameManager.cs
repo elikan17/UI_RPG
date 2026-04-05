@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         GameOverUI.SetActive(true);
     }
+    
+    public void SetCurrentEnemy(Enemy newEnemy)
+    {
+        enemy = newEnemy;
+    }
+    
 // Update is called once per frame
     void Update()
     {
