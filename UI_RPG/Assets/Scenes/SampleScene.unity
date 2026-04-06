@@ -153,10 +153,10 @@ RectTransform:
   - {fileID: 486649159}
   m_Father: {fileID: 423613001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -490.1302, y: 0.000005722}
-  m_SizeDelta: {x: 603.23, y: 891}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -487.13013, y: 0}
+  m_SizeDelta: {x: -970.77, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &75366112
 GameObject:
@@ -481,8 +481,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   health: 1000
-  charName: Meow
-  activeWeapon: {fileID: 1276540988}
+  charName: Steve
+  weapons:
+  - {fileID: 643678675}
+  - {fileID: 1276540988}
+  - {fileID: 965249343}
+  activeWeapon: {fileID: 0}
 --- !u!4 &278751903
 Transform:
   m_ObjectHideFlags: 0
@@ -498,6 +502,7 @@ Transform:
   m_Children:
   - {fileID: 643678676}
   - {fileID: 1276540989}
+  - {fileID: 965249344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &319811656
@@ -960,10 +965,10 @@ RectTransform:
   - {fileID: 319811657}
   m_Father: {fileID: 74487597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150.61, y: -283}
-  m_SizeDelta: {x: 194.69, y: 65.7752}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 151.39001, y: 163}
+  m_SizeDelta: {x: 194.69, y: 65.77521}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486649160
 MonoBehaviour:
@@ -1022,12 +1027,24 @@ MonoBehaviour:
     - m_Text: Poison Sword
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
-    - m_Text: Option C
+    - m_Text: Hammer
       m_Image: {fileID: 0}
       m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 278751902}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SelectWeapon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &486649161
 MonoBehaviour:
@@ -2030,6 +2047,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cd3064d634db840a1c8566aa180ab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PoisonEnemy
+--- !u!1 &965249342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965249344}
+  - component: {fileID: 965249343}
+  m_Layer: 0
+  m_Name: Hammer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965249343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965249342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72243b60fa1cfee4596f2a57a920039d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CritSword
+  wpnName: Hammer
+  minDamage: 1
+  maxDamage: 2
+  critChance: 0.3
+  critMultiplier: 10
+--- !u!4 &965249344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965249342}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 278751903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &986947684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2828,10 +2894,10 @@ RectTransform:
   - {fileID: 717068166}
   m_Father: {fileID: 423613001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 498.954, y: -0.0000081062}
-  m_SizeDelta: {x: 585.5822, y: 891}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 498.954, y: 0}
+  m_SizeDelta: {x: -998.4177, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1721193334
 GameObject:

@@ -3,7 +3,24 @@ using UnityEngine;
 
 public class Player : Character
 {
+    [SerializeField] private Weapon[] weapons;
     [SerializeField] private Weapon activeWeapon;
+
+    void Start()
+    {
+        SelectWeapon(0);
+    }
+
+    public void SelectWeapon(int index)
+    {
+        activeWeapon = weapons[index];
+        
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].gameObject.SetActive(i == index);
+        }
+    }
+    
     public override void Attack(Character toHit)
     {
         toHit.TakeDamage(activeWeapon);
@@ -18,5 +35,7 @@ public class Player : Character
         GameManager.Instance.GameOver();
         
     }
+    
+    
     
 }
