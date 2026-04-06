@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy : Character
 {
 
-    [SerializeField] private float minDamage, maxDamage;
+    [SerializeField] public float minDamage, maxDamage;
     public override void Attack(Character toHit)
     {
         float damage = Random.Range(minDamage, maxDamage);
@@ -19,14 +19,4 @@ public class Enemy : Character
         Destroy(gameObject);
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
