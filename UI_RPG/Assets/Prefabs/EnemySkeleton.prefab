@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CritEnemy
   health: 10
   charName: Skeleton
+  enemySprite: {fileID: 4306222645206958543, guid: 83d9f2e350e56e047af07b556b0b726b, type: 3}
   minDamage: 2
   maxDamage: 5
+  deathParticles: {fileID: 4291414316027660230, guid: d62f9f6d49da62141b5a0e8dcb950cce, type: 3}
   critChance: 0.1
   critMultiplier: 3

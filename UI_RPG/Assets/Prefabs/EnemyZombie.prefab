@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PoisonEnemy
   health: 15
   charName: Infectious Zombie
+  enemySprite: {fileID: 4991906346452576945, guid: f728a11266dca1448aba76c8923815b7, type: 3}
   minDamage: 1
   maxDamage: 2
+  deathParticles: {fileID: 4291414316027660230, guid: d62f9f6d49da62141b5a0e8dcb950cce, type: 3}
   infectionDamage: 6
   infectionCount: 3

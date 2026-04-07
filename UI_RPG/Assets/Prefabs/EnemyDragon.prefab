@@ -46,5 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 20
   charName: Dragon
+  enemySprite: {fileID: 3309444240507325962, guid: 6261084f5acb68140b5e22dcd3b8bf42, type: 3}
   minDamage: 1
   maxDamage: 7
+  deathParticles: {fileID: 4291414316027660230, guid: d62f9f6d49da62141b5a0e8dcb950cce, type: 3}

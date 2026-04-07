@@ -1,9 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : Character
 {
-
+    [SerializeField] private Sprite enemySprite;
+    private Image enemyImg;
     [SerializeField] public float minDamage, maxDamage;
+    [SerializeField] ParticleSystem deathParticles;
+
+    void Start()
+    {
+        enemyImg = GameObject.Find("EnemyPortrait").GetComponent<Image>();
+        enemyImg.sprite = enemySprite;
+    }
+    
     public override void Attack(Character toHit)
     {
         float damage = Random.Range(minDamage, maxDamage);
@@ -17,6 +27,8 @@ public class Enemy : Character
         Debug.Log(CharName + " has been defeated!");
         EnemySpawner.Instance.SpawnEnemy();
         Destroy(gameObject);
+        ParticleSystem ps = Instantiate(deathParticles, transform.position, Quaternion.identity);
+        Destroy(ps.gameObject, 2f);
     }
 
 }
