@@ -19,6 +19,9 @@ public class Player : Character
         {
             weapons[i].gameObject.SetActive(i == index);
         }
+        
+        if(activeWeapon != null)
+            activeWeapon.SelectedWeaponName();
     }
     
     public override void Attack(Character toHit)

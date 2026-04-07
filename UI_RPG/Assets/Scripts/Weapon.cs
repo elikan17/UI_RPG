@@ -5,15 +5,9 @@ public abstract class Weapon : MonoBehaviour
     public string wpnName;
     public abstract float GetDamage();
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void SelectedWeaponName()
     {
-        
+        Debug.Log("Weapon: " + wpnName);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

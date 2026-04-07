@@ -26,8 +26,8 @@ public class Enemy : Character
     {
         Debug.Log(CharName + " has been defeated!");
         EnemySpawner.Instance.SpawnEnemy();
-        Destroy(gameObject);
         ParticleSystem ps = Instantiate(deathParticles, transform.position, Quaternion.identity);
+        Destroy(gameObject);
         Destroy(ps.gameObject, 2f);
     }
 

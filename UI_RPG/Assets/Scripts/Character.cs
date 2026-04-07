@@ -2,10 +2,15 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    public float health;
-
+    [SerializeField] private float health;
     [SerializeField]private string charName;
 
+    public float Health
+    {
+        get { return health; }
+        set { health = Mathf.Max(0, value); }
+    }
+    
     public string CharName
     {
         get { return charName; }
@@ -15,11 +20,10 @@ public abstract class Character : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health = health - damage;
+        Health = health - damage;
         Debug.Log(charName + " took " + damage + " damage! Health: " + health);
         if (health <= 0)
         {
-            health = Mathf.Max(health, 0);
             Death();
         }
     }
