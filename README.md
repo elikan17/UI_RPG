@@ -10,6 +10,6 @@ Overload: Character klasē ir divas TakeDamage() metodes ar dažādiem parametri
 4. ABSTRAKCIJA - Weapon ir abstrakta klase ar abstraktu metodi GetDamage() un parastu metodi SelectedWeaponName(). No šīs abstraktās klases tieši mantotas vismaz divas klases: Sword un Bow.
 
 Papilduzdevumi:
-1. Spēle ir 3 dažādi pretinieki ar dažādiem uzbrukumi veidiem.
+1. Spēle ir 3 dažādi pretinieki ar dažādiem uzbrukumi veidiem. Kad pretinieks tiek pievekts jauns uzspawnojas un tas ir random.
 2. Spēlē ir 4 dažādi ieroči, no kuriem trīs atšķiras ar uzbrukuma veidu. Spēles UI ir dropdown, kurā var izvēlēties ieroci spēles laikā.
-3. Pievienoju vizuālo noformējumu, kur tiek parādīts attēls ar pašreizējo pretinieku, kā arī kad pretinieks nomirst, tiek parādīts particle.
+3. Pievienoju vizuālo noformējumu, kur tiek parādīts attēls ar pašreizējo pretinieku, kā arī kad pretinieks nomirst, tiek parādīts death particle.
