@@ -11,5 +11,5 @@ Overload: Character klasē ir divas TakeDamage() metodes ar dažādiem parametri
 
 Papilduzdevumi:
 1. Spēle ir 3 dažādi pretinieki ar dažādiem uzbrukumi veidiem.
-2. Spēlē ir 4 dažādi ieroči, no kuriem trīs atšķiras ar uzbrukuma veidu.
+2. Spēlē ir 4 dažādi ieroči, no kuriem trīs atšķiras ar uzbrukuma veidu. Spēles UI ir dropdown, kurā var izvēlēties ieroci spēles laikā.
 3. Pievienoju vizuālo noformējumu, kur tiek parādīts attēls ar pašreizējo pretinieku, kā arī kad pretinieks nomirst, tiek parādīts particle.
